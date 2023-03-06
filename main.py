@@ -1,11 +1,10 @@
-from flask import Flask
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route('/')
-def hel():
-  return "Hello World!"
-
-app.run(host='0.0.0.0', port=5000)
+#domain where this api is hosted for example : localhost:5000/docs to see swagger documentation automagically generated.
 
 
+@app.get("/")
+def home():
+    return {"message":"Hello TutLinks.com"}
